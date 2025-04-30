@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="" />
   </head>
   <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
     <p>
       <button
         onclick="updateCalculation('1');
@@ -103,7 +104,7 @@
       <button
         onclick="try {
           if (calculation !== 'Error') {
-         calculation = eval(calculation);}
+         calculation = String(math.evaluate(calculation))}
         } catch (error){
           calculation = 'Error'
         }
