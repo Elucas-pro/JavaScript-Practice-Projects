@@ -121,14 +121,21 @@
         Clear
       </button>
     </p>
+
+    <p id="calc">0</p>
     <script>
       let calculation = ``;
+
+      function calcamount() {
+        document.querySelector("#calc").textContent = `${calculation}`;
+      }
 
       /*Simple fonction permettant d'update le nombre pour le calculateur.*/
 
       function updateCalculation(value) {
         calculation += value;
         console.log(calculation);
+        calcamount();
       }
     </script>
   </body>
