@@ -1,4 +1,4 @@
-This repository contains small JS projects i create while learning. Each one explores new concepts for me at the time of making them.
+This repository contains JS projects i create while learning. Each one explores new concepts for me at the time of making them.
 
 - Simple Calculator : A simple calculator, my first project. Uses Eval for now.
 
