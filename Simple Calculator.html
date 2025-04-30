@@ -101,11 +101,17 @@
         .
       </button>
       <button
-        onclick="calculation = eval(calculation); calcamount();
-       ;"
+        onclick="try {
+          if (calculation !== 'Error') {
+         calculation = eval(calculation);}
+        } catch (error){
+          calculation = 'Error'
+        }
+        calcamount();"
       >
         =
       </button>
+
       <button
         onclick="updateCalculation(' / ');
       ;"
@@ -133,6 +139,9 @@
       /*Simple fonction permettant d'update le nombre pour le calculateur.*/
 
       function updateCalculation(value) {
+        if (calculation === "Error") {
+          calculation = "";
+        }
         calculation += value;
         console.log(calculation);
         calcamount();
