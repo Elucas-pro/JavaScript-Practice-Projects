@@ -75,7 +75,7 @@
     <p id="cart-amount">0 /10</p>
 
     <script>
-      /*Fonction indiquant le nombre de produits dans le Cart, avec un maximum de 10.*/
+      /*Shows the number of products on the cart, 10 products max.*/
       function refreshCart() {
         document.querySelector(
           "#cart-amount"
@@ -83,7 +83,7 @@
       }
       let cartQuantity = 0;
 
-      /*Fonction permettant d'update le nombre de produits dans le Cart.*/
+      /*Updates the number of products in the cart.*/
 
       function updateCartQuantity(value) {
         if (cartQuantity + value > 10) {

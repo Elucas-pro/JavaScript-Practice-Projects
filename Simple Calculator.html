@@ -170,10 +170,12 @@
       /*Adds a random number between 0 and 9 to the current calculation. */
 
       function randomdigit() {
-        const digit = Math.floor(Math.random() * 10);
+        const digit = Math.floor(Math.random() * 9) + 1;
         updateCalculation(String(digit));
       }
+
       /*Displays the current calculation to the website.*/
+
       function calcamount() {
         document.querySelector("#calc").textContent = `${calculation}`;
       }
