@@ -131,42 +131,54 @@
     <button onclick="calculation = calculation.slice(0, -1); calcamount()">
       Remove last
     </button>
-    <button onclick="memory = calculation;">Memory</button>
-    <button onclick="calculation = memory; calcamount();">Recall</button>
-    <button onclick="memory = ''; calculation='0'; calcamount();">
-      Memory Clear
-    </button>
-    <button
-      onclick="calculation = String(Number(calculation) + Number(memory)); calcamount();"
-    >
-      Memory +
-    </button>
-    <button
-      onclick="calculation = String(Number(calculation) - Number(memory)); calcamount();"
-    >
-      Memory -
-    </button>
-    <button
-      onclick="calculation = String(Number(calculation) * Number(memory)); calcamount();"
-    >
-      Memory *
-    </button>
-    <button
-      onclick="calculation = String(Number(calculation) / Number(memory)); calcamount();"
-    >
-      Memory /
-    </button>
+    <p>
+      <button onclick="memory = calculation;">Memory</button>
+      <button onclick="calculation = memory; calcamount();">Recall</button>
+      <button onclick="memory = ''; calculation='0'; calcamount();">
+        Memory Clear
+      </button>
+      <button
+        onclick="calculation = String(Number(calculation) + Number(memory)); calcamount();"
+      >
+        Memory +
+      </button>
+      <button
+        onclick="calculation = String(Number(calculation) - Number(memory)); calcamount();"
+      >
+        Memory -
+      </button>
+      <button
+        onclick="calculation = String(Number(calculation) * Number(memory)); calcamount();"
+      >
+        Memory *
+      </button>
+      <button
+        onclick="calculation = String(Number(calculation) / Number(memory)); calcamount();"
+      >
+        Memory /
+      </button>
+    </p>
 
+    <p>
+      <button onclick="randomdigit()">random</button>
+    </p>
     <p id="calc">0</p>
     <script>
       let calculation = "";
       let memory = "";
 
+      /*Adds a random number between 0 and 9 to the current calculation. */
+
+      function randomdigit() {
+        const digit = Math.floor(Math.random() * 10);
+        updateCalculation(String(digit));
+      }
+      /*Displays the current calculation to the website.*/
       function calcamount() {
         document.querySelector("#calc").textContent = `${calculation}`;
       }
 
-      /*Simple fonction permettant d'update le nombre pour le calculateur.*/
+      /*Updates the current calculation with a number or operator.*/
 
       function updateCalculation(value) {
         if (calculation === "Error" || calculation === "0") {
