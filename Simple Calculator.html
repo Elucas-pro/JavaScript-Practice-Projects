@@ -121,12 +121,16 @@
     </p>
     <p>
       <button
-        onclick=" calculation='';
-        console.log(0);"
+        onclick=" calculation='0';
+        calcamount();"
       >
         Clear
       </button>
     </p>
+
+    <button onclick="calculation = calculation.slice(0, -1); calcamount()">
+      Remove last
+    </button>
 
     <p id="calc">0</p>
     <script>
@@ -139,11 +143,10 @@
       /*Simple fonction permettant d'update le nombre pour le calculateur.*/
 
       function updateCalculation(value) {
-        if (calculation === "Error") {
+        if (calculation === "Error" || calculation === "0") {
           calculation = "";
         }
         calculation += value;
-        console.log(calculation);
         calcamount();
       }
     </script>
