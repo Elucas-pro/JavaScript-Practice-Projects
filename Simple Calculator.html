@@ -131,10 +131,36 @@
     <button onclick="calculation = calculation.slice(0, -1); calcamount()">
       Remove last
     </button>
+    <button onclick="memory = calculation;">Memory</button>
+    <button onclick="calculation = memory; calcamount();">Recall</button>
+    <button onclick="memory = ''; calculation='0'; calcamount();">
+      Memory Clear
+    </button>
+    <button
+      onclick="calculation = String(Number(calculation) + Number(memory)); calcamount();"
+    >
+      Memory +
+    </button>
+    <button
+      onclick="calculation = String(Number(calculation) - Number(memory)); calcamount();"
+    >
+      Memory -
+    </button>
+    <button
+      onclick="calculation = String(Number(calculation) * Number(memory)); calcamount();"
+    >
+      Memory *
+    </button>
+    <button
+      onclick="calculation = String(Number(calculation) / Number(memory)); calcamount();"
+    >
+      Memory /
+    </button>
 
     <p id="calc">0</p>
     <script>
-      let calculation = ``;
+      let calculation = "";
+      let memory = "";
 
       function calcamount() {
         document.querySelector("#calc").textContent = `${calculation}`;
