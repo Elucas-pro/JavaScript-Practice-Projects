@@ -1,0 +1,28 @@
+let calculation = "";
+
+/*Memory operations (+, -, *, /) only work after you save a value with Memory.*/
+
+let memory = "";
+
+/*Adds a random number between 0 and 9 to the current calculation. */
+
+function randomdigit() {
+  const digit = Math.floor(Math.random() * 9) + 1;
+  updateCalculation(String(digit));
+}
+
+/*Displays the current calculation to the website.*/
+
+function calcamount() {
+  document.querySelector("#calc").textContent = `${calculation}`;
+}
+
+/*Updates the current calculation with a number or operator.*/
+
+function updateCalculation(value) {
+  if (calculation === "Error" || calculation === "0") {
+    calculation = "";
+  }
+  calculation += value;
+  calcamount();
+}
