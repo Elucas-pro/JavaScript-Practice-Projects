@@ -26,3 +26,25 @@ function updateCalculation(value) {
   calculation += value;
   calcamount();
 }
+
+/* Shows the result of a calculation. */
+
+function calculationResult() {
+  try {
+    if (calculation !== "Error") {
+      calculation = String(math.evaluate(calculation));
+    }
+  } catch (error) {
+    calculation = "Error";
+  }
+  calcamount();
+}
+
+/* Rounds the value to two decimals. */
+
+function calculationRounder() {
+  if (typeof calculation === "string") {
+    calculation = String(math.round(Number(calculation), 2));
+    calcamount();
+  }
+}

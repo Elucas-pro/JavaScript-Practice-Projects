@@ -6,7 +6,7 @@
     <title>Calculator</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
@@ -95,23 +95,7 @@
       >
         0
       </button>
-      <button
-        onclick="updateCalculation('.');
-       ;"
-      >
-        .
-      </button>
-      <button
-        onclick="try {
-          if (calculation !== 'Error') {
-         calculation = String(math.evaluate(calculation))}
-        } catch (error){
-          calculation = 'Error'
-        }
-        calcamount();"
-      >
-        =
-      </button>
+      <button onclick="calculationResult()">=</button>
 
       <button
         onclick="updateCalculation(' / ');
@@ -158,8 +142,35 @@
       >
         Memory /
       </button>
+      <button onclick="calculation = math.square(calculation); calcamount()">
+        Square
+      </button>
+      <button
+        onclick="calculation = String(math.abs((math.evaluate(calculation)))); calculationRounder(); calcamount()"
+      >
+        Absolute
+      </button>
+      <button
+        onclick="calculation = String(math.exp(calculation)); calculationRounder(); calcamount()"
+      >
+        Exponential
+      </button>
     </p>
-
+    <button
+      onclick="calculation = String(math.pow(calculation, calculation)); calculationRounder(); calcamount()"
+    >
+      Self Power
+    </button>
+    <button
+      onclick="calculation = String(math.log2(calculation)); calculationRounder(); calcamount()"
+    >
+      Division amount
+    </button>
+    <button
+      onclick="calculation = String((math.nthRoot(calculation))); calculationRounder(); calcamount()"
+    >
+      Root
+    </button>
     <p>
       <button onclick="randomdigit()">random</button>
     </p>
