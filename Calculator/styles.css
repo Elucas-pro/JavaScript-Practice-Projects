@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: gray;
+  margin: 0;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 64px);
+  grid-gap: 12px;
+  justify-content: center;
+  margin: 2rem auto;
+}
+
+.keypad button {
+  color: white;
+  background-color: black;
+  border: none;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+.functions {
+  white-space: normal;
+  line-height: 1.2;
+  font-size: 0.75rem;
+}
+
+.functions-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  max-width: 400px;
+}
+
+.functions-container .functions {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+#calc {
+  color: black;
+  overflow: hidden;
+  font-size: 40px;
+  min-width: none;
+  min-height: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons button {
+  color: white;
+  background-color: black;
+  border: none;
+  overflow: hidden;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  font-size: 25px;
+}
+.buttons button:hover {
+  background-color: #a47864;
+}
+.buttons button:active {
+  background-color: #a47864;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

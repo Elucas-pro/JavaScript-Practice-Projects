@@ -10,171 +10,214 @@
   </head>
   <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
-    <p>
-      <button
-        onclick="updateCalculation('1');
-        "
-      >
-        1
-      </button>
-      <button
-        onclick="updateCalculation('2');
-        "
-      >
-        2
-      </button>
-      <button
-        onclick="updateCalculation('3');
-        "
-      >
-        3
-      </button>
-      <button
-        onclick="updateCalculation(' + ');
-        "
-      >
-        +
-      </button>
-    </p>
-    <p>
-      <button
-        onclick="updateCalculation('4');
-        "
-      >
-        4
-      </button>
-      <button
-        onclick="updateCalculation('5');
-        "
-      >
-        5
-      </button>
-      <button
-        onclick="updateCalculation('6');
-        "
-      >
-        6
-      </button>
-      <button
-        onclick="updateCalculation(' - ');
-        "
-      >
-        -
-      </button>
-    </p>
-    <p>
-      <button
-        onclick="updateCalculation('7');
-        "
-      >
-        7
-      </button>
-      <button
-        onclick="updateCalculation('8');
-       "
-      >
-        8
-      </button>
-      <button
-        onclick="updateCalculation('9');
-        "
-      >
-        9
-      </button>
-      <button
-        onclick="updateCalculation(' * ');
-        "
-      >
-        *
-      </button>
-    </p>
-    <p>
-      <button
-        onclick="updateCalculation('0');
+    <div class="buttons">
+      <div class="keypad">
+        <button
+          class="number"
+          onclick="updateCalculation('7');
       "
-      >
-        0
-      </button>
-      <button onclick="calculationResult()">=</button>
-
-      <button
-        onclick="updateCalculation(' / ');
+        >
+          7
+        </button>
+        <button
+          class="number"
+          onclick="updateCalculation('8');
+       "
+        >
+          8
+        </button>
+        <button
+          class="number"
+          onclick="updateCalculation('9');
+      "
+        >
+          9
+        </button>
+        <button
+          class="operation"
+          onclick="updateCalculation('/');
       ;"
-      >
-        /
-      </button>
-    </p>
-    <p>
-      <button
-        onclick=" calculation='0';
-        calcamount();"
-      >
-        Clear
-      </button>
-    </p>
+        >
+          ÷
+        </button>
 
-    <button onclick="calculation = calculation.slice(0, -1); calcamount()">
-      Remove last
-    </button>
-    <p>
-      <button onclick="memory = calculation;">Memory</button>
-      <button onclick="calculation = memory; calcamount();">Recall</button>
-      <button onclick="memory = ''; calculation='0'; calcamount();">
-        Memory Clear
-      </button>
-      <button
-        onclick="calculation = String(Number(calculation) + Number(memory)); calcamount();"
-      >
-        Memory +
-      </button>
-      <button
-        onclick="calculation = String(Number(calculation) - Number(memory)); calcamount();"
-      >
-        Memory -
-      </button>
-      <button
-        onclick="calculation = String(Number(calculation) * Number(memory)); calcamount();"
-      >
-        Memory *
-      </button>
-      <button
-        onclick="calculation = String(Number(calculation) / Number(memory)); calcamount();"
-      >
-        Memory /
-      </button>
-      <button onclick="calculation = math.square(calculation); calcamount()">
-        Square
-      </button>
-      <button
-        onclick="calculation = String(math.abs((math.evaluate(calculation)))); calculationRounder(); calcamount()"
-      >
-        Absolute
-      </button>
-      <button
-        onclick="calculation = String(math.exp(calculation)); calculationRounder(); calcamount()"
-      >
-        Exponential
-      </button>
-    </p>
-    <button
-      onclick="calculation = String(math.pow(calculation, calculation)); calculationRounder(); calcamount()"
-    >
-      Self Power
-    </button>
-    <button
-      onclick="calculation = String(math.log2(calculation)); calculationRounder(); calcamount()"
-    >
-      Division amount
-    </button>
-    <button
-      onclick="calculation = String((math.nthRoot(calculation))); calculationRounder(); calcamount()"
-    >
-      Root
-    </button>
-    <p>
-      <button onclick="randomdigit()">random</button>
-    </p>
-    <p id="calc">0</p>
+        <button
+          class="number"
+          onclick="updateCalculation('4');
+        "
+        >
+          4
+        </button>
+        <button
+          class="number"
+          onclick="updateCalculation('5');
+        "
+        >
+          5
+        </button>
+        <button
+          class="number"
+          onclick="updateCalculation('6');
+        "
+        >
+          6
+        </button>
+        <button
+          class="operation"
+          onclick="updateCalculation('*');
+      "
+        >
+          *
+        </button>
+
+        <button
+          class="number"
+          onclick="updateCalculation('1');
+      "
+        >
+          1
+        </button>
+        <button
+          class="number"
+          onclick="updateCalculation('2');
+    "
+        >
+          2
+        </button>
+        <button
+          class="number"
+          onclick="updateCalculation('3');
+  "
+        >
+          3
+        </button>
+        <button
+          class="operation"
+          onclick="updateCalculation('-');
+        "
+        >
+          -
+        </button>
+
+        <button
+          class="number"
+          onclick="updateCalculation('0');
+      "
+        >
+          0
+        </button>
+        <button class="operation" onclick="calculationResult()">=</button>
+        <button class="operation" onclick="updateCalculation('.');">.</button>
+
+        <button
+          class="operation"
+          onclick="updateCalculation('+');
+        "
+        >
+          +
+        </button>
+      </div>
+      <p id="calc">0</p>
+      <div class="functions-container">
+        <button
+          class="functions"
+          onclick=" calculation='0';
+        calcamount();"
+        >
+          Clear
+        </button>
+
+        <button
+          class="functions"
+          onclick="calculation = calculation.slice(0, -1); calcamount()"
+        >
+          Rem last
+        </button>
+
+        <!--
+          <button class="functions" onclick="memory = calculation;">
+            Memory
+          </button> 
+          <button
+            class="functions"
+            onclick="calculation = memory; calcamount();"
+          >
+            Recall
+          </button> 
+          <button
+            class="functions"
+            onclick="memory = ''; calculation='0'; calcamount();"
+          >
+            Memory Clear
+          </button> 
+          <button
+            class="functions"
+            onclick="calculation = String(Number(calculation) + Number(memory)); calcamount();"
+          >
+            Memory +
+          </button>
+          <button
+            class="functions"
+            onclick="calculation = String(Number(calculation) - Number(memory)); calcamount();"
+          >
+            Memory -
+          </button>
+          <button
+            class="functions"
+            onclick="calculation = String(Number(calculation) * Number(memory)); calcamount();"
+          >
+            Memory *
+          </button>
+          <button
+            class="functions"
+            onclick="calculation = String(Number(calculation) / Number(memory)); calcamount();"
+          >
+            Memory /
+          </button>
+        -->
+        <button
+          class="functions"
+          onclick="calculation = math.square(calculation); calcamount()"
+        >
+          Square
+        </button>
+        <button
+          class="functions"
+          onclick="calculation = String(math.abs((math.evaluate(calculation)))); calculationRounder(); calcamount()"
+        >
+          Abs
+        </button>
+        <button
+          class="functions"
+          onclick="calculation = String(math.exp(calculation)); calculationRounder(); calcamount()"
+        >
+          Exp
+        </button>
+
+        <button
+          class="functions"
+          onclick="calculation = String(math.pow(calculation, calculation)); calculationRounder(); calcamount()"
+        >
+          Self Pow
+        </button>
+        <button
+          class="functions"
+          onclick="calculation = String(math.log2(calculation)); calculationRounder(); calcamount()"
+        >
+          Div amt
+        </button>
+        <button
+          class="functions"
+          onclick="calculation = String((math.nthRoot(calculation))); calculationRounder(); calcamount()"
+        >
+          Root
+        </button>
+        <button class="functions" onclick="updateCalculation('(')">(</button>
+        <button class="functions" onclick="updateCalculation(')')">)</button>
+        <button class="functions" onclick="randomdigit()">random</button>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
