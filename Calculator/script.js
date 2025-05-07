@@ -49,6 +49,8 @@ function calculationRounder() {
   }
 }
 
+/* Gives values depending on keyboard press. */
+
 document.addEventListener("keydown", (event) => {
   const key = event.key;
 
@@ -65,8 +67,17 @@ document.addEventListener("keydown", (event) => {
     calcamount();
   }
 
-  if (key === "Escape") {
+  if (key == "Escape") {
     calculation = "0";
+    calcamount();
+  }
+
+  if (key == "r") {
+    randomdigit();
+  }
+
+  if (key == "s") {
+    calculation = math.square(calculation);
     calcamount();
   }
 });
