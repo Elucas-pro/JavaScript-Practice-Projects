@@ -1,8 +1,8 @@
 import generator from "generate-password-browser";
 
-/*Library used : https://www.npmjs.com/package/generate-password-browser?activeTab=readme */
+/* Library used : https://www.npmjs.com/package/generate-password-browser?activeTab=readme */
 
-/* Generates a password depending on checked password options.*/
+/* Generates a password depending on checked password options. */
 
 document.getElementById("generatePSW").addEventListener("click", () => {
   const uppercase = document.getElementById("uppercase").checked;
