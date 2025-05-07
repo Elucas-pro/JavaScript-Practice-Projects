@@ -48,3 +48,25 @@ function calculationRounder() {
     calcamount();
   }
 }
+
+document.addEventListener("keydown", (event) => {
+  const key = event.key;
+
+  if ("0123456789+-*/().".includes(key)) {
+    updateCalculation(key);
+  }
+
+  if (key == "Enter") {
+    calculationResult();
+  }
+
+  if (key == "Backspace") {
+    calculation = calculation.slice(0, -1);
+    calcamount();
+  }
+
+  if (key === "Escape") {
+    calculation = "0";
+    calcamount();
+  }
+});
