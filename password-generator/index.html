@@ -10,9 +10,8 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <script src="script.js" async defer></script>
-
     <div id="checkbox">
+      <button id="generatePSW">Generate Password</button>
       <input type="checkbox" id="uppercase" name="Uppercase" />
       <label for="Uppercase">Uppercase</label><br />
       <input type="checkbox" id="lowercase" name="Lowercase" />
@@ -22,5 +21,7 @@
       <input type="checkbox" id="numbers" name="Numbers" />
       <label for="Numbers">Numbers</label><br />
     </div>
+    <p id="result">0</p>
+    <script type="module" src="script.js" async defer></script>
   </body>
 </html>
