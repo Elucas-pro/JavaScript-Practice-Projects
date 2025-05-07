@@ -12,7 +12,6 @@ document.getElementById("generatePSW").addEventListener("click", () => {
 
   const password = generator.generate({
     length: 50,
-    numbers: numbers,
     lowercase: lowercase,
     symbols: symbols,
     numbers: numbers,
