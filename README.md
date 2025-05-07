@@ -7,3 +7,5 @@ So far, the JS code is always inside the HTML file.
 - Cart Quantity : Tracks the quantity of items on a cart, to a maximum of ten items. Helped me learn functions and if statements.
 
 - Rock Paper Scissors : Code for the game Rock Paper Scissors.
+
+- Password Generator : Generates a password, only works with Vite.
