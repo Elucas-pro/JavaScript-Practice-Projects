@@ -55,15 +55,17 @@ body {
 }
 
 #calc {
-  color: black;
-  overflow: hidden;
-  font-size: 40px;
-  min-width: none;
-  min-height: 2vh;
+  width: 100%;
+  max-width: 400px;
+  height: 60px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: flex-end;
+  padding: 0 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-size: 25px;
 }
 
 .buttons button {
