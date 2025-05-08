@@ -1,24 +1,19 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import generator from "generate-password-browser";
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+document.getElementById("generatePSW").addEventListener("click", () => {
+  const uppercase = document.getElementById("uppercase").checked;
+  const lowercase = document.getElementById("lowercase").checked;
+  const symbols = document.getElementById("symbols").checked;
+  const numbers = document.getElementById("numbers").checked;
 
-setupCounter(document.querySelector('#counter'))
+  const password = generator.generate({
+    length: 50,
+    lowercase,
+    uppercase,
+    symbols,
+    numbers,
+    strict: true,
+  });
+
+  document.getElementById("result").textContent = password;
+});
