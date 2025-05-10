@@ -49,6 +49,56 @@ function calculationRounder() {
   }
 }
 
+/* Does the absolute math formula. */
+
+function absolute() {
+  if (typeof calculation === "string") {
+    calculation = String(math.abs(math.evaluate(calculation)));
+    calculationRounder();
+    calcamount();
+  }
+}
+
+/* Does the expodential math formula. */
+
+function expodential() {
+  if (typeof calculation === "string") {
+    calculation = String(math.exp(calculation));
+    calculationRounder();
+    calcamount();
+  }
+}
+
+/* Does the power math formula. */
+
+function power() {
+  if (typeof calculation === "string") {
+    calculation = String(math.pow(calculation, calculation));
+    calculationRounder();
+    calcamount();
+  }
+}
+
+/* Does the divide amount math formula. */
+
+function divAmt() {
+  if (typeof calculation === "string") {
+    calculation = String(math.log2(calculation));
+    calculationRounder();
+    calcamount();
+  }
+}
+
+/* Does the root math formula. */
+
+function root() {
+  if (typeof calculation === "string") {
+    calculation = String(math.nthRoot(calculation));
+    calculationRounder();
+    calcamount();
+  }
+}
+
 /* Gives values depending on keyboard press. */
 
 document.addEventListener("keydown", (event) => {
@@ -79,5 +129,8 @@ document.addEventListener("keydown", (event) => {
   if (key == "s") {
     calculation = math.square(calculation);
     calcamount();
+  }
+
+  if (key == "") {
   }
 });

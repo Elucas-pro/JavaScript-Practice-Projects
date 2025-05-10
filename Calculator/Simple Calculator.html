@@ -181,37 +181,12 @@
         >
           Square
         </button>
-        <button
-          class="functions"
-          onclick="calculation = String(math.abs((math.evaluate(calculation)))); calculationRounder(); calcamount()"
-        >
-          Abs
-        </button>
-        <button
-          class="functions"
-          onclick="calculation = String(math.exp(calculation)); calculationRounder(); calcamount()"
-        >
-          Exp
-        </button>
+        <button class="functions" onclick="absolute()">Abs</button>
+        <button class="functions" onclick="expodential()">Exp</button>
 
-        <button
-          class="functions"
-          onclick="calculation = String(math.pow(calculation, calculation)); calculationRounder(); calcamount()"
-        >
-          Self Pow
-        </button>
-        <button
-          class="functions"
-          onclick="calculation = String(math.log2(calculation)); calculationRounder(); calcamount()"
-        >
-          Div amt
-        </button>
-        <button
-          class="functions"
-          onclick="calculation = String((math.nthRoot(calculation))); calculationRounder(); calcamount()"
-        >
-          Root
-        </button>
+        <button class="functions" onclick="power()">Self Pow</button>
+        <button class="functions" onclick="divAmt()">Div amt</button>
+        <button class="functions" onclick="root()">Root</button>
         <button class="functions" onclick="updateCalculation('(')">(</button>
         <button class="functions" onclick="updateCalculation(')')">)</button>
         <button class="functions" onclick="randomdigit()">random</button>
